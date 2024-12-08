@@ -1,5 +1,4 @@
 
-const data = {
   "name": ["John", "Jane", "Alex", "Chris", "Taylor", "Jordan", "Morgan", "Sam", "Jamie"],
   "age": 30,
   "isStudent": false,
@@ -8,13 +7,4 @@ const data = {
     "city": "New York",
     "zip": "10001"
   }
-};
 
-// Pick a random name from the "name" array
-const randomName = data.name[Math.floor(Math.random() * data.name.length)];
-
-// Replace the "name" array with the random name
-data.name = randomName;
-
-// Log the modified JSON object
-console.log("Modified Data:", data);
