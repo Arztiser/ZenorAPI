@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random JSON Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        pre {
+            background-color: #282c34;
+            color: #f1f1f1;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        .loading {
+            text-align: center;
+            font-size: 18px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random JSON Data from Cloudflare Worker</h1>
+    <div class="loading">Loading random data...</div>
+    <pre id="json-output">Fetching data...</pre>
+
+    <script>
+        // Replace this URL with your Cloudflare Worker URL
+        const apiUrl = 'https://your-worker-subdomain.workers.dev/person.json';
+
+        // Fetch the random JSON from Cloudflare Worker
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                // Update the content on the page with the fetched data
+                document.querySelector('.loading').style.display = 'none';
+                document.getElementById('json-output').textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                document.querySelector('.loading').style.display = 'none';
+                document.getElementById('json-output').textContent = 'Error fetching data: ' + error;
+            });
+    </script>
+</body>
+</html>
