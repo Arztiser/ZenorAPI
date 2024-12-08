@@ -35,14 +35,14 @@
     <pre id="json-output">Fetching data...</pre>
 
     <script>
-        // Replace this URL with your Cloudflare Worker URL
-        const apiUrl = 'https://your-worker-subdomain.workers.dev/person.json';
+        // Use the Cloudflare Worker URL as is
+        const apiUrl = 'https://zenor.danearends10.workers.dev/';  // Replace this with your Worker URL
 
         // Fetch the random JSON from Cloudflare Worker
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
-                // Update the content on the page with the fetched data
+                // Hide the loading message and display the data
                 document.querySelector('.loading').style.display = 'none';
                 document.getElementById('json-output').textContent = JSON.stringify(data, null, 2);
             })
