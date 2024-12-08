@@ -1,10 +1,10 @@
-
+{
   "name": ["John", "Jane", "Alex", "Chris", "Taylor", "Jordan", "Morgan", "Sam", "Jamie"],
-  "age": 30,
-  "isStudent": false,
-  "hobbies": ["reading", "gaming", "coding"],
+  "age": [18, 19, 20, 21, 22, 23, 24, 25, 30, 35, 40],
+  "isStudent": [true, false],
+  "hobbies": ["reading", "gaming", "coding", "sports", "music"],
   "address": {
-    "city": "New York",
-    "zip": "10001"
+    "cities": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix"],
+    "zipCodes": ["10001", "90001", "60601", "77001", "85001"]
   }
-
+}
