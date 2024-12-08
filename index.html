@@ -1,55 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random JSON Generator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-        }
-        pre {
-            background-color: #282c34;
-            color: #f1f1f1;
-            padding: 20px;
-            border-radius: 8px;
-            overflow-x: auto;
-        }
-        .loading {
-            text-align: center;
-            font-size: 18px;
-            color: #888;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f4f8;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .api-box {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .api-box h3 {
+      font-size: 1.5rem;
+      margin: 0;
+      color: #333;
+    }
+
+    .api-box p {
+      font-size: 1rem;
+      color: #666;
+      margin: 10px 0;
+    }
+
+    .api-box a {
+      text-decoration: none;
+      color: white;
+      background-color: #4CAF50;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .api-box a:hover {
+      background-color: #45a049;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-    <h1>Random JSON Data from Cloudflare Worker</h1>
-    <div class="loading">Loading random data...</div>
-    <pre id="json-output">Fetching data...</pre>
+  <header>
+    <h1 style="text-align: center; padding: 20px 0; background-color: #333; color: white;">API Directory</h1>
+  </header>
 
-    <script>
-        // Use the Cloudflare Worker URL as is
-        const apiUrl = 'https://zenor.danearends10.workers.dev/';  // Replace this with your Worker URL
+  <div class="container">
+    <!-- API 1: Random Person -->
+    <div class="api-box">
+      <h3>Random Person API</h3>
+      <p>This API returns a randomly generated person with details like name, age, hobbies, and address.</p>
+      <a href="https://zenor.danearends10.workers.dev/" target="_blank">Access API</a>
+    </div>
 
-        // Fetch the random JSON from Cloudflare Worker
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                // Hide the loading message and display the data
-                document.querySelector('.loading').style.display = 'none';
-                document.getElementById('json-output').textContent = JSON.stringify(data, null, 2);
-            })
-            .catch(error => {
-                document.querySelector('.loading').style.display = 'none';
-                document.getElementById('json-output').textContent = 'Error fetching data: ' + error;
-            });
-    </script>
+    <!-- API 2: Another Example API (if applicable) -->
+    <div class="api-box">
+      <h3>Example API 2</h3>
+      <p>This is another example API description. Replace with your API details.</p>
+      <a href="https://another-api-link.com" target="_blank">Access API</a>
+    </div>
+
+    <!-- You can add more API boxes here -->
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
