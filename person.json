@@ -1,4 +1,4 @@
-// Original JSON
+
 const data = {
   "name": ["John", "Jane", "Alex", "Chris", "Taylor", "Jordan", "Morgan", "Sam", "Jamie"],
   "age": 30,
